@@ -53,10 +53,10 @@ class LED:
         x_origin, y_origin = 145, 65
         for letter, coord in zip(ascii_lowercase[0:8], range(8)):
             x = x_origin + (coord * 50)
-            LED.led_grid[letter + '1'] = [pygame.draw.circle(background, (ColorPalette.active_color), (x, y_origin), 15), False, x, y_origin]
+            LED.led_grid[letter + '1'] = [pygame.draw.circle(background, (ColorPalette.active_color), (x, y_origin), 20), False, x, y_origin]
             for coord in range(1, 8):
                 y = y_origin + (coord * 50)
-                LED.led_grid[letter + str(coord+1)] = [pygame.draw.circle(background, (ColorPalette.active_color), (x, y), 15), False, x, y]
+                LED.led_grid[letter + str(coord+1)] = [pygame.draw.circle(background, (ColorPalette.active_color), (x, y), 20), False, x, y]
 
     def toggle_led():
         for led in LED.led_grid.values():
@@ -64,7 +64,7 @@ class LED:
                 led[1] = True
         for led in LED.led_grid.keys():
             if LED.led_grid[led][1] == True:
-                LED.led_grid[led][0] = pygame.draw.circle(background, (ColorPalette.active_color), (LED.led_grid[led][2], LED.led_grid[led][3]), 15)
+                LED.led_grid[led][0] = pygame.draw.circle(background, (ColorPalette.active_color), (LED.led_grid[led][2], LED.led_grid[led][3]), 20)
                 LED.led_grid[led][1] = False
 
 
